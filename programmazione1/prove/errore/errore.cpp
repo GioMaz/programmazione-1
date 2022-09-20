@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <iostream>
 
-int fattoriale(int n, int i);
-
 int main() {
     int n = 20;
     if (n%n==0) {
