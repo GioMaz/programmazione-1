@@ -9,7 +9,7 @@ int main() {
 
     int res = (23-h)*3600 + (59-m)*60 + (59-s);
 
-    cout << "secondi da mezzanotte: " << res << endl;
+    cout << res << endl;
 
     return 0;
 }

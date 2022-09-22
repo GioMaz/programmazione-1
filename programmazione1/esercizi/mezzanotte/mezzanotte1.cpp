@@ -14,24 +14,7 @@ int main() {
     int m = app/60;
     int s1 = app%60;
 
-    if (h < 10)
-        cout << '0' << h;
-    else
-        cout << h;
-
-    cout << ':';
-
-    if (m < 10)
-        cout << '0' << m;
-    else
-        cout << m;
-
-    cout << ':';
-
-    if (s1 < 10)
-        cout << '0' << s1;
-    else
-        cout << s1;
+    cout << h << ':' << m << ':' << s1 << endl;
 
     return 0;
 }
