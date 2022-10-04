@@ -7,11 +7,9 @@ int main() {
     char c;
     cin >> c;
 
-    if (c < 97 || c > 122)
-        return 1;
-
-    char c1 = c - 32;
-    cout << c1 << endl;
+    c -= 'a';
+    c += 'A';
+    cout << c << endl;
 
     return 0;
 }
