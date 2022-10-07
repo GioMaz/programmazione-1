@@ -3,7 +3,8 @@
 using namespace std;
 
 int main() {
-    int n = 10;
+    int n;
+    cin >> n;
 
     if (n == 0) {
         cout << 0 << endl;
@@ -17,6 +18,7 @@ int main() {
         h = p1;
         p1 = p1 + p;
         p = h;
+        cout << p << endl;
     }
 
     cout << p1 << endl;
