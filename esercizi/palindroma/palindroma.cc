@@ -9,9 +9,6 @@ int main() {
     cout << rovescia(789) << endl;
 }
 
-// n   789 78 7
-// res 789 - 78
-// i   1 2 3
 int rovescia(int n, int a) {
     if (n < 10)
         return a * 10 + n;
