@@ -12,6 +12,7 @@ int main() {
         res += 1/((double)(i*i));
     }
     cout << sqrt(res*6) << endl;
+    cout << M_PI << endl;
 }
 
 // 1.6449
