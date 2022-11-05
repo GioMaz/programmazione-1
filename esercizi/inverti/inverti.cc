@@ -1,19 +1,22 @@
 #include <iostream>
 #include <cmath>
 
-void inverti(int a);
-
 using namespace std;
+
+int inverti(int a) {
+    int res = 0;
+
+    while (a != 0) {
+        res *= 10;
+        res += a%10;
+        a /= 10;
+    }
+
+    return res;
+}
 
 int main() {
     int a;
     cin >> a;
-    inverti(a);
-}
-
-void inverti(int a) {
-    while (a != 0) {
-        cout << a - (a/10)*10;
-        a /= 10;
-    }
+    cout << inverti(a);
 }
