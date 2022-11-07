@@ -15,6 +15,8 @@ int main() {
     in.open("testo.txt", ios::in);
     char buffer[5];
     in >> buffer;
+    // oppure
+    // in.getline(buffer, 5);
     in.close();
     cout << buffer << endl;
 

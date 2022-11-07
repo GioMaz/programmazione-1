@@ -18,7 +18,7 @@ int main() {
     n = a | 0;
     cout << n << endl;
 
-    n = a ^ 254;
+    n = a ^ 254; // (xor)
     cout << n << endl;
 
     n = ~a;
