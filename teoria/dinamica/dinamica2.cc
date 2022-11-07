@@ -9,5 +9,9 @@ int main() {
         cout << "Area di memoria esaurita" << endl;
     }
 
+    // deallocazione (memory leak)
+    // $ valgrind --leak-check=full ./a.out
+    delete[] p4;
+
     return 0;
 }

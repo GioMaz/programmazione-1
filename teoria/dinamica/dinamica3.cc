@@ -22,4 +22,11 @@ int main() {
             M[i][j] = 0;
         }
     }
+
+    // deallocazione (memory leak)
+    // $ valgrind --leak-check=full ./a.out
+    for (int i = 0; i < n1; i++) {
+        delete[] M[i];
+    }
+    delete[] M;
 }
