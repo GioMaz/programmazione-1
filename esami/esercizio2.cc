@@ -11,6 +11,9 @@ void print(const char a[], const int s, const char * prefix) {
     cout << endl;
 }
 
+// TIPS:
+// usare riferimenti a puntatori *&rp
+// usare riferimenti &r
 void get_elements_aux(char source[], int dim, char *&dest1, int &dim_dest1, char *&dest2, int &dim_dest2, int i, int ddim_dest1, int ddim_dest2) {
     if (i == dim) {
         dest1 = new char[dim_dest1];
