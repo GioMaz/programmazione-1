@@ -18,18 +18,21 @@ void swap(int &a, int &b);
 int main() {
     const int N = 5;
     int A[N] = {4,3,5,2,7};
-    bubble1(A, N);
+    // selection(A, N);
     print(A, N);
 }
 
 void selection(int A[], int N) {
+    int temp;
     for (int i = 0; i < N - 1; i++) {
         int min = i;
         for (int j = i; j < N; j++) {
             if (A[j] < A[min])
                 min = j;
         }
-        swap(A[min], A[i]);
+        temp = A[min];
+        A[min] = A[i];
+        A[i] = temp;
     }
 }
 
@@ -47,7 +50,9 @@ void bubble1_aux(int A[], int N, int i, bool ordered) {
     }
 
     if (A[i] > A[i+1]) {
-        swap(A[i], A[i+1]);
+        int temp = A[i];
+        A[i] = A[i+1];
+        A[i+1] = temp;
         ordered = false;
     }
 
@@ -64,12 +69,6 @@ void shell(int A[], int N) {
 
 void merge(int A[], int N) {
 
-}
-
-void swap(int &a, int &b) {
-    int tmp = a;
-    a = b;
-    b = tmp;
 }
 
 void print(int A[], int N) {
