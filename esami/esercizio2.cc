@@ -70,10 +70,6 @@ int main() {
 
     get_elements(s, s_s, d1, d1_s, d2, d2_s);
 
-    cout << d1 << endl;
-    cout << d2 << endl;
-    cout << d2_s << endl;
-
     print(d1, d1_s, "D1     = ");
     print(d2, d2_s, "D2     = ");
 
