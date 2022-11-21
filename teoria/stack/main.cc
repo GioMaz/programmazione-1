@@ -27,7 +27,6 @@ int main() {
         print(s, i);
     }
 
-
     deinit(s);
 
     return 0;

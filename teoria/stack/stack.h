@@ -4,9 +4,9 @@
 // Abstract Data Types
 // Stack (pila di piatti) (Last In First Out)
 struct stack {
-    int i;
+    int i; // indice corrente
     int d;
-    int *a;
+    int *v;
 };
 
 void init(stack &s, int d);

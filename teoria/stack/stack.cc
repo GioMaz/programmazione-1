@@ -8,16 +8,16 @@ using namespace std;
 void init(stack &s, int d) {
     s.i = 0;
     s.d = d;
-    s.a = new int[d];
+    s.v = new int[d];
 }
 
 void deinit(stack &s) {
-    delete[] s.a;
+    delete[] s.v;
 }
 
 void push(stack &s, int n) {
     if (s.i != s.d) {
-        s.a[s.i] = n;
+        s.v[s.i] = n;
         s.i++;
     }
 }
@@ -29,9 +29,9 @@ void pop(stack &s) {
 }
 
 int top(const stack &s) {
-    return s.a[s.i];
+    return s.v[s.i];
 }
 
 void print(const stack &s, int i) {
-    cout << s.a[i] << endl;
+    cout << s.v[i] << endl;
 }
