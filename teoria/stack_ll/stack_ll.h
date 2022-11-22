@@ -1,13 +1,14 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef STACK_LL_H
+#define STACK_LL_H
 
 // Abstract Data Types
 // Stack (pila di piatti) (Last In First Out)
-struct stack {
-    int i; // indice corrente
-    int d;
-    int *v;
+struct nodo {
+    int val;
+    nodo *next;
 };
+
+typedef nodo *stack;
 
 void init(stack &s, int d);
 void deinit(stack &s);

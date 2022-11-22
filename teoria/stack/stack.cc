@@ -32,6 +32,9 @@ int top(const stack &s) {
     return s.v[s.i];
 }
 
-void print(const stack &s, int i) {
-    cout << s.v[i] << endl;
+void print(const stack &s) {
+    for (int i = 0; i < s.i; i++) {
+        cout << s.v[i] << ' ';
+    }
+    cout << endl;
 }
