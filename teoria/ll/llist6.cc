@@ -31,21 +31,28 @@ int main() {
         return 1;
     }
 
-    char buffer[10];
+    int buffer;
+    in >> buffer;
 
-    lista n = NULL;
+    lista l;
+    lista nodoCorrente = new nodo;
+    nodoCorrente->val = buffer;
+    nodoCorrente->next = NULL;
+    l = nodoCorrente;
+
     while (in >> buffer) {
-        lista n1 = new nodo;
-        n1->val = atoi(buffer);
-        n1->next = n;
-        n = n1;
+        lista nodoNuovo = new nodo;
+        nodoNuovo->val = buffer;
+        nodoNuovo->next = NULL;
+        nodoCorrente->next = nodoNuovo;
+        nodoCorrente = nodoNuovo;
     }
 
-    for (lista l1 = n; l1 != NULL; l1 = l1->next) {
+    for (lista l1 = l; l1 != NULL; l1 = l1->next) {
         cout << l1->val << ' ';
     }
     cout << endl;
 
-    distruggi(n);
+    distruggi(l);
     return 0;
 }
