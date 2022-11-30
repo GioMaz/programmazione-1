@@ -4,3 +4,4 @@
 - controllo successo apertura stream `if (in.fail())` e `if (out.fail())`
 - chiusura stream `in.close()` e `out.close()`
 - deallocazione array dinamici e struct
+- guardare nella directory "esami"
