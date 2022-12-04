@@ -24,6 +24,7 @@ int partition(int *a, int low, int high) {
     return low1+1;
 }
 
+// O(nlogn)
 void quick(int *a, int low, int high) {
     if (low < high) {
         int pivot = partition(a, low, high);
