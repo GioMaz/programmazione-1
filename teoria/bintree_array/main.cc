@@ -1,5 +1,5 @@
 #include <iostream>
-#include "bintree.h"
+#include "bintree_array.h"
 
 using namespace std;
 
@@ -7,7 +7,7 @@ using namespace std;
 // Binary tree (altezza = lunghezza massima rami compresa tra log2(n+1) e n)
 int main() {
     tree t;
-    init(t);
+    init(t, 200);
 
     insert(t, 6);
     insert(t, 1);
@@ -20,8 +20,8 @@ int main() {
     print(t);
 
     tree t1 = search(t, 9);
-    cout << t1->val << endl;
-    // cout << t1.v[t1.i] << endl;
+    // cout << t1->val << endl;
+    cout << t1.v[t1.i] << endl;
 
     return 0;
 }
