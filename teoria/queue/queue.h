@@ -12,9 +12,9 @@ struct queue {
 
 void init(queue &q, int d);
 void deinit(queue &q);
-void enqueue(queue &q, int n); // aggiunge da sinistra
-void dequeue(queue &q); // rimuove da destra
-int first(const queue &q); // ritorna da destra
+void enqueue(queue &q, int n); // aggiunge a destra
+void dequeue(queue &q); // rimuove a sinistra
+int first(const queue &q); // ritorna a sinistra
 void print(const queue &q);
 
 #endif

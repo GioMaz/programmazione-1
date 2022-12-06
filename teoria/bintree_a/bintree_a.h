@@ -1,5 +1,5 @@
-#ifndef BINTREE_ARRAY_H
-#define BINTREE_ARRAY_H
+#ifndef BINTREE_A_H
+#define BINTREE_A_H
 
 // Abstract Data Types
 // Binary tree (altezza = lunghezza massima rami compresa tra log2(n+1) e n)

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "bintree_array.h"
+#include "bintree_a.h"
 
 using namespace std;
 
