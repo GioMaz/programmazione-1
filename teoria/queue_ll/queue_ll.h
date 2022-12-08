@@ -8,16 +8,18 @@ struct nodo {
     nodo *next;
 };
 
+typedef nodo *lista;
+
 struct queue {
-    nodo *t;
-    nodo *h;
+    lista tail;
+    lista head;
 };
 
-void init(queue &q, int d);
-void deinit(queue &q);
-void enqueue(queue &q, int n); // aggiunge a destra
-void dequeue(queue &q); // rimuove a sinistra
-int first(const queue &q); // ritorna da sinistra
-void print(const queue &q);
+void init(int);
+void deinit();
+bool enqueue(int); // aggiunge a destra
+bool dequeue(); // rimuove a sinistra
+bool first(int &); // ritorna da sinistra
+void print();
 
 #endif

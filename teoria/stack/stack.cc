@@ -5,36 +5,64 @@ using namespace std;
 
 // Abstract Data Types
 // Stack (pila di piatti) (Last In First Out)
-void init(stack &s, int d) {
-    s.i = 0;
-    s.d = d;
-    s.v = new int[d];
+static stack S;
+
+static bool isfull() {
+    return (S.i == S.dim);
 }
 
-void deinit(stack &s) {
-    delete[] s.v;
+static bool isempty() {
+    return (S.i == 0);
 }
 
-void push(stack &s, int n) {
-    if (s.i != s.d) {
-        s.v[s.i] = n;
-        s.i++;
+
+void init(int dim) {
+    S.i = 0;
+    S.dim = dim;
+    S.v = new int[dim];
+}
+
+void deinit() {
+    delete[] S.v;
+}
+
+bool push(int n) {
+    bool res = true;
+    if (!isfull()) {
+        S.v[S.i] = n;
+        S.i++;
     }
-}
-
-void pop(stack &s) {
-    if (s.i != 0) {
-        s.i--;
+    else {
+        res = false;
     }
+    return res;
 }
 
-int top(const stack &s) {
-    return s.v[s.i];
+bool pop() {
+    bool res = true;
+    if (!isempty()) {
+        S.i--;
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void print(const stack &s) {
-    for (int i = 0; i < s.i; i++) {
-        cout << s.v[i] << ' ';
+bool top(int &n) {
+    bool res = true;
+    if (isempty()) {
+        n = S.v[S.i];
+    }
+    else {
+        res = false;
+    }
+    return res;
+}
+
+void print() {
+    for (int i = S.i - 1; i >= 0; i--) {
+        cout << S.v[i] << ' ';
     }
     cout << endl;
 }

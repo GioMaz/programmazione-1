@@ -6,24 +6,24 @@ using namespace std;
 // Abstract Data Types
 // Stack (pila di piatti) (Last In First Out)
 int main() {
-    int d = 5;
+    int dim = 5;
 
     stack s;
-    init(s, d);
+    init(dim);
 
-    for (int i = 0; i < d; i++) {
-        push(s, i);
+    for (int i = 0; i < dim; i++) {
+        push(i);
     }
 
-    print(s);
+    print();
 
-    for (int i = 0; i < d/2; i++) {
-        pop(s);
+    for (int i = 0; i < dim/2; i++) {
+        pop();
     }
 
-    print(s);
+    print();
 
-    deinit(s);
+    deinit();
 
     return 0;
 }

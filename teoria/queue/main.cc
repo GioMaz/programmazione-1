@@ -8,20 +8,19 @@ using namespace std;
 int main() {
     int d = 5;
 
-    queue q;
-    init(q, d);
+    init(d);
 
-    enqueue(q, 3);
-    enqueue(q, 6);
-    enqueue(q, 7);
-    enqueue(q, 5);
+    enqueue(3);
+    enqueue(6);
+    enqueue(7);
+    enqueue(5);
     
-    print(q);
+    print();
 
-    dequeue(q);
-    dequeue(q);
+    dequeue();
+    dequeue();
 
-    print(q);
+    print();
 
     return 0;
 }

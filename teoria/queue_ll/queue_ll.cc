@@ -5,47 +5,74 @@ using namespace std;
 
 // Abstract Data Types
 // Queue (fila di persone con primo a sinistra) (First In First Out)
-void init(queue &q, int d) {
-    q.h = NULL;
+static queue Q;
+
+static bool isempty() {
+    return (Q.head == NULL);
+}
+
+void init(int dim) {
+    Q.head = NULL;
 };
 
-void deinit(queue &q) {
+void deinit() {
 }
 
 // ht-----------
 // h-t----------
 // h--t---------
-void enqueue(queue &q, int n) {
-    nodo *n1 = new nodo;
-    n1->val = n;
-    n1->next = NULL;
-    if (q.h == NULL) {
-        q.h = n1;
+bool enqueue(int n) {
+    bool res = true;
+    lista l = new (nothrow) nodo;
+    if (l == NULL) {
+        res = false;
     }
     else {
-        q.t->next = n1;
+        l->val = n;
+        l->next = NULL;
+        if (isempty()) {
+            Q.head = l;
+        }
+        else {
+            Q.tail->next = l;
+        }
+        Q.tail = l;
     }
-    q.t = n1;
+    return res;
 }
 
 // h--t---------
 // -h-t---------
 // --ht---------
-void dequeue(queue &q) {
-    nodo *n = q.h;
-    q.h = q.h->next;
-    delete n;
+bool dequeue() {
+    bool res = true;
+    if (!isempty()) {
+        lista l = Q.head;
+        Q.head = Q.head->next;
+        delete l;
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-int first(const queue &q) {
-    return 1;
+bool first(int &n) {
+    bool res = true;
+    if (!isempty()) {
+        n = Q.head->val;
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void print(const queue &q) {
-    nodo *n = q.h;
-    while (n != NULL) {
-        cout << n->val << ' ';
-        n = n->next;
+void print() {
+    lista l = Q.head;
+    while (l != NULL) {
+        cout << l->val << ' ';
+        l = l->next;
     }
     cout << endl;
 }

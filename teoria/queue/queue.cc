@@ -5,46 +5,74 @@ using namespace std;
 
 // Abstract Data Types
 // Queue (fila di persone con primo a sinistra) (First In First Out)
-static int next(const queue &q, int i) {
-    return (i + 1) % q.d;
+static queue Q;
+
+static int next(int i) {
+    return (i + 1) % Q.dim;
 }
 
-void init(queue &q, int d) {
-    q.t = 0;
-    q.h = 0;
-    q.d = d + 1;
-    q.v = new int[d];
+static bool isfull() {
+    return (next(Q.tail) == Q.head);
+}
+
+static bool isempty() {
+    return (Q.tail == Q.head);
+}
+
+void init(int dim) {
+    Q.tail = 0;
+    Q.head = 0;
+    Q.dim = dim + 1;
+    Q.v = new int[dim];
 };
 
-void deinit(queue &q) {
-    delete[] q.v;
+void deinit() {
+    delete[] Q.v;
 }
 
 // ht-----------
 // h-t----------
 // h--t---------
-void enqueue(queue &q, int n) {
-    if (next(q, q.t) != q.h) {
-        q.v[q.t] = n;
-        q.t = next(q, q.t);
+bool enqueue(int n) {
+    bool res = true;
+    if (!isfull()) {
+        Q.v[Q.tail] = n;
+        Q.tail = next(Q.tail);
     }
+    else {
+        res = false;
+    }
+    return res;
 }
 
 // h--t---------
 // -h-t---------
 // --ht---------
-void dequeue(queue &q) {
-    if (q.t != q.h) {
-        q.h = next(q, q.h);
+bool dequeue() {
+    bool res = true;
+    if (!isempty()) {
+        Q.head = next(Q.head);
     }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-int first(const queue &q) {
-    return q.v[q.h];
+bool first(int &n) {
+    bool res = true;
+    if (!isempty()) {
+        n = Q.v[Q.head];
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void print(const queue &q) {
-    for (int i = q.h; i != q.t; i = next(q, i)) {
-        cout << q.v[i] << endl;
+void print() {
+    for (int i = Q.head; i != Q.tail; i = next(i)) {
+        cout << Q.v[i] << ' ';
     }
+    cout << endl;
 }

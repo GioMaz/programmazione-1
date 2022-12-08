@@ -5,35 +5,62 @@ using namespace std;
 
 // Abstract Data Types
 // Stack (pila di piatti) (Last In First Out)
-void init(stack &s, int d) {
-    s = NULL;
+static stack S;
+
+static bool isempty() {
+    return (S == NULL);
 }
 
-void deinit(stack &s) {
-    while (s != NULL) {
-        pop(s);
+void init(int dim) {
+    S = NULL;
+}
+
+void deinit() {
+    while (!isempty()) {
+        pop();
     }
 }
 
-void push(stack &s, int n) {
-    stack s1 = new nodo;
-    s1->val = n;
-    s1->next = s;
-    s = s1;
+bool push(int n) {
+    bool res = true;
+    stack s1 = new (nothrow) nodo;
+    if (s1 == NULL) {
+        res = false;
+    }
+    else {
+        s1->val = n;
+        s1->next = S;
+        S = s1;
+    }
+    return res;
 }
 
-void pop(stack &s) {
-    stack s1 = s;
-    s = s->next;
-    delete s1;
+bool pop() {
+    bool res = true;
+    if (!isempty()) {
+        stack s1 = S;
+        S = S->next;
+        delete s1;
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-int top(const stack &s) {
-    return s->val;
+bool top(int &n) {
+    bool res = true;
+    if (!isempty()) {
+        n = S->val;
+    }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void print(const stack &s) {
-    stack s1 = s;
+void print() {
+    stack s1 = S;
     while (s1 != NULL) {
         cout << s1->val << ' ';
         s1 = s1->next;
