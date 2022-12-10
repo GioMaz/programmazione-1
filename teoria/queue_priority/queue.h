@@ -3,7 +3,7 @@
 
 #include "message.h"
 
-static const int QUEUE_SIZE = 100;
+const int QUEUE_SIZE = 100;
 
 struct queue {
     int t;
@@ -11,13 +11,10 @@ struct queue {
     message v[QUEUE_SIZE];
 };
 
-bool isempty(const queue &);
-bool isfull(const queue &);
 void init(queue &);
 void deinit(queue &);
-void enqueue(queue &, message);
-void dequeue(queue &);
-message first(const queue &);
+bool enqueue(queue &, message &);
+bool dequeue(queue &);
 void print(const queue &);
 
 #endif

@@ -1,39 +1,44 @@
-#include "queue_p.h"
-#include "queue.h"
 #include <iostream>
+#include "queue_p.h"
 
-using namespace std;
-
-void init_p(queue_p &q) {
+void init_p(queue_p &q_p) {
     for (int i = 0; i < MAX_PRIORITY; i++) {
-        init(q.v_p[i]);
+        init(q_p.v_p[i]);
     }
 }
 
-void deinit_p(queue_p &q) {
+void deinit_p(queue_p &q_p) {
     for (int i = 0; i < MAX_PRIORITY; i++) {
-        deinit(q.v_p[i]);
+        deinit(q_p.v_p[i]);
     }
 }
 
-void enqueue_p(queue_p &q, message &m) {
+bool enqueue_p(queue_p &q_p, message &m) {
+    bool res;
     int priority = m.priority;
-    if (priority >= 0 && priority <= MAX_PRIORITY) {
-        enqueue(q.v_p[priority], m);
-        // cout << q.v_p[priority].v[0].info << endl;
+    if (priority >= 0 && priority < MAX_PRIORITY) {
+        res = enqueue(q_p.v_p[priority], m);
     }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void dequeue_p(queue_p &q, message &m) {
+bool dequeue_p(queue_p &q_p, message &m) {
+    bool res;
     int priority = m.priority;
-    if (priority >= 0 && priority <= MAX_PRIORITY) {
-        dequeue(q.v_p[priority]);
+    if (priority >= 0 && priority < MAX_PRIORITY) {
+        res = dequeue(q_p.v_p[priority]);
     }
+    else {
+        res = false;
+    }
+    return res;
 }
 
-void print_p(const queue_p &q) {
-    cout << "ECCOME" << endl;
+void print_p(const queue_p &q_p) {
     for (int i = 0; i < MAX_PRIORITY; i++) {
-        print(q.v_p[i]);
+        print(q_p.v_p[i]);
     }
 }

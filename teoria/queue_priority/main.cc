@@ -1,23 +1,22 @@
-#include <iostream>
 #include "queue_p.h"
 
-using namespace std;
-
 int main() {
-    queue_p q;
-    init_p(q);
+    queue_p q_p;
+    init_p(q_p);
 
-    message m1 = { "CIAO", 10 };
-    enqueue_p(q, m1);
-    message m2 = { "bruh", 4};
-    enqueue_p(q, m2);
-    message m3 = { "iìsi", 1};
-    enqueue_p(q, m3);
+    message m1 = { "CIAO", 0 };
+    enqueue_p(q_p, m1);
+    message m2 = { "bruh", 3 };
+    enqueue_p(q_p, m2);
+    message m3 = { "iìsi", 9 };
+    enqueue_p(q_p, m3);
 
-    // dequeue(q);
-    // dequeue(q);
+    print_p(q_p);
 
-    print_p(q);
+    dequeue_p(q_p, m1);
+    dequeue_p(q_p, m2);
+
+    print_p(q_p);
 
     return 0;
 }

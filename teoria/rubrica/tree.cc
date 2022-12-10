@@ -37,15 +37,15 @@ void insert_cognome(albero &a, persona *p) {
     else insert_cognome(a->right, p);
 }
 
-// albero search(const albero &a, int n) {
-//     albero res;
-//     if (a == NULL) res = NULL;
-//     else if (n == a->val) res = a;
-//     else if (n < a->val) res = search(a->left, n);
-//     else if (n > a->val) res = search(a->right, n);
-//     return res;
-// }
-// 
+albero search(const albero &a, int n) {
+    albero res;
+    if (a == NULL) res = NULL;
+    else if (n == a->val) res = a;
+    else if (n < a->val) res = search(a->left, n);
+    else if (n > a->val) res = search(a->right, n);
+    return res;
+}
+
 void print_tree(const albero &a) {
     if (a == NULL) return;
     print(a->left);

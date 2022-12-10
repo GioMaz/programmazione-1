@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <iostream>
 #include "message.h"
 
@@ -10,6 +9,5 @@ void read_message(message &m) {
 }
 
 void print_message(const message &m) {
-    cout << "message print" << endl;
     cout << m.priority << ": " << m.info << endl;
 }
