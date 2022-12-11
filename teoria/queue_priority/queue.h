@@ -3,8 +3,6 @@
 
 #include "message.h"
 
-const int QUEUE_SIZE = 100;
-
 struct queue {
     int t;
     int h;

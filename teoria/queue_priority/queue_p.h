@@ -3,8 +3,6 @@
 
 #include "queue.h"
 
-const int MAX_PRIORITY = 10;
-
 struct queue_p {
     queue v_p[MAX_PRIORITY];
 };

@@ -4,11 +4,13 @@ int main() {
     queue_p q_p;
     init_p(q_p);
 
-    message m1 = { "CIAO", 0 };
+    message m1 = { 0, "primo messaggio" };
     enqueue_p(q_p, m1);
-    message m2 = { "bruh", 3 };
+
+    message m2 = { 4, "secondo messaggio" };
     enqueue_p(q_p, m2);
-    message m3 = { "iìsi", 9 };
+
+    message m3 = { 9, "terzo messaggio" };
     enqueue_p(q_p, m3);
 
     print_p(q_p);
