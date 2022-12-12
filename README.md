@@ -6,3 +6,4 @@
 - (nothrow) davanti a tutti i `new`
 - deallocazione array dinamici e struct
 - guardare nella directory "esami"
+- inizializzare array statici con `char buffer[255] = {}`
