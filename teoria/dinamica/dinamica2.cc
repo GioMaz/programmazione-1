@@ -3,6 +3,9 @@
 using namespace std;
 
 int main() {
+    int n;
+    cin >> n;
+
     // try/catch
     int *p4 = new (nothrow) int[n];
     if (p4 == NULL) {
