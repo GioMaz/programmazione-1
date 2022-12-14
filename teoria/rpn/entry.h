@@ -8,8 +8,8 @@ enum op { PLUS, MINUS, TIMES, DIVIDE };
 const int MAX_DIM = 100;
 
 struct entry {
-    type type;
-    op op;
+    type t;
+    op o;
     double n;
 };
 

@@ -37,11 +37,11 @@ int length() {
 
 void print() {
     for (int j = 0; j < i; j++) {
-        if (v[j].type == NUMBER) {
+        if (v[j].t == NUMBER) {
             cout << v[j].n << ' ';
         }
         else {
-            cout << v[j].op << ' ';
+            cout << v[j].o << ' ';
         }
     }
     cout << endl;
