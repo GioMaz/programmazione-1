@@ -1,3 +1,17 @@
+## ESAME 20/1/2022
+### esercizio1.cc
+- decimale -> base = resto
+- base -> decimale = moltiplicazione
+
+### esercizio2.cc
+- caso base 
+- list = f(ramo destro) 
+- list = list1
+- list = f(ramo sinistro)
+
+### esercizio3.cc
+- utilizzare le pile per INVERTIRE
+
 ## ERRORI COMUNI
 - LEGGERE TUTTO IL TESTO
 - controllo valori (grandezza massima di array) delle variabili di input
