@@ -53,5 +53,7 @@ int main(int argc, char *argv[]) {
         out << voti[dim - i - 1] << endl;
     }
 
+    delete[] voti;
+
     return 0;
 }

@@ -19,10 +19,10 @@
 - controllo successo apertura stream `if (in.fail())` e `if (out.fail())`
 - chiusura stream `in.close()` e `out.close()`
 - (nothrow) davanti a tutti i `new`
-- deallocazione array dinamici, struct e deinit ADT
-- guardare nella directory "esami"
+- `delete` array dinamici, struct e deinit ADT
+- guardare nella directory esami
 - inizializzare array statici con `char buffer[255] = {}`
-- tenere conto di '\0' per stringhe
+- tenere conto di `'\0'` per stringhe
 
 ## Librerie
 ### cmath
