@@ -1,4 +1,4 @@
-## ESAME 20/1/2022
+## ESAME 20/1/2023
 ### esercizio1.cc
 - decimale -> base = resto
 - base -> decimale = moltiplicazione
