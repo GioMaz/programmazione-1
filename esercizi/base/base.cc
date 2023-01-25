@@ -2,24 +2,22 @@
 
 using namespace std;
 
-bool from_decimal(int n, int base, char res[]) {
-    bool result = true;
-
-    if (base > 16) { // BASE 16
-        result = false;
-    }
-
-    char digits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' }; // BASE 16
+void from_decimal(int n, char res[]) {
     int max_len = 100;
 
     int n1 = n;
-    int base1 = base;
 
     char res1[max_len];
     int i = max_len - 1;
     while (n1 != 0 && i >= 0) {
-        res1[i] = digits[n1 % base1];
-        n1 /= base1;
+        int mod = n1 % 16; // BASE 16
+        if (mod > 9) {
+            res1[i] = 'A' + mod - 10;
+        }
+        else {
+            res1[i] = '0' + mod;
+        }
+        n1 /= 16; // BASE 16
         i--;
     }
 
@@ -28,8 +26,6 @@ bool from_decimal(int n, int base, char res[]) {
         res[j] = res1[i + j];
     }
     res[max_len - i] = '\0';
-
-    return result;
 }
 
 int to_decimal(char n[]) {
@@ -67,7 +63,7 @@ int to_decimal(char n[]) {
 
 int main() {
     char res[100];
-    from_decimal(455951, 16, res);
+    from_decimal(455951, res);
     cout << res << endl;
 
     int n = to_decimal(res);
