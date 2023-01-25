@@ -32,13 +32,7 @@ bool from_decimal(int n, int base, char res[]) {
     return result;
 }
 
-bool to_decimal(char n[], int base, int &res) {
-    bool result = true;
-
-    if (base > 16) { // BASE 16
-        result = false;
-    }
-
+int to_decimal(char n[]) {
     int max_len = 100;
 
     int i = 0;
@@ -51,35 +45,32 @@ bool to_decimal(char n[], int base, int &res) {
         else if (n[i] >= '0' && n[i] <= '9'){
             cur = n[i] - '0';
         }
-        else {
-            result = false;
-        }
 
         res1[i] = cur;
 
         i++;
     }
 
+    int res = 0;
     int index = i - 1;
     for (int j = 0; j < i; j++) {
         int pow = 1;
         for (int k = 1; k <= index; k++) {
-            pow *= base;
+            pow *= 16; // BASE 16
         }
         res += res1[j]*pow;
         index--;
     }
 
-    return result;
+    return res;
 }
 
 int main() {
     char res[100];
-    from_decimal(455951, 14, res);
+    from_decimal(455951, 16, res);
     cout << res << endl;
 
-    int n;
-    to_decimal(res, 14, n);
+    int n = to_decimal(res);
     cout << n << endl;
 
     return 0;

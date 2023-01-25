@@ -5,5 +5,6 @@
 - controllo apertura `if (in.fail()) return 1;`
 - chiusura stream `in.close(); out.close();`
 - errore silenzioso `new (nothrow) nodo`
-- deallocazione array, struct, ADT `delete l1`
+- deallocazione array, struct `delete l1`
+- deallocazione abstract data types `deinit()`
 - considerare terminatore di stringa `'\0'`
