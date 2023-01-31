@@ -4,21 +4,17 @@
 #include <iostream>
 using namespace std;
 
-struct cella {
-    int indiceRiga;
-    int indiceColonna;
-};
 
 struct nodo {
-	cella value;
+	int value;
 	nodo* next;
 };
 typedef nodo* lista;
 
 void init();
 void deinit();
-bool push(cella);
-bool top(cella &);
+bool push(int);
+bool top(int &);
 bool pop();
 bool vuota();
 

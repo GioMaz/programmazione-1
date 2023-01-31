@@ -13,7 +13,7 @@ void init() {
 }
 
 
-bool top (cella &n) {
+bool top (int &n) {
 	
 	bool risultatoOperazione;
 	if (vuota()) {
@@ -27,7 +27,7 @@ bool top (cella &n) {
 }
 
 
-bool push (cella n) {
+bool push (int n) {
 
 	bool risultatoOperazione;
 	lista nuovoNodo = new nodo;

@@ -1,9 +1,7 @@
 #include <iostream>
 #include "pila.h"
 
-
 using namespace std;
-
 
 /**
  * Ricordare che il file "pila.h" contiene la definizione della struct "cella" (qui sotto riportata)
@@ -14,70 +12,57 @@ using namespace std;
  * };
  */
 
-void push_c(int i, int j) {
-    cella c;
-    c.indiceRiga = i;
-    c.indiceColonna = j;
-    push(c);
+void inserisci(int icur, int jcur) {
+    cella *c = new cella;
+    c->indiceRiga = icur;
+    c->indiceColonna = jcur;
+    push(*c);
 }
 
 void risolviLabirinto(int [][5], int, int);
-
-void risolviLabirinto(int m[][5], int x, int y) {
-    bool visitato[5][5] = {{ false }};
-    visitato[0][0] = true;
+void risolviLabirinto(int labirinto[][5], int i, int j) {
     init();
 
-    cella c1;
-    c1.indiceRiga = 0;
-    c1.indiceColonna = 0;
-    push(c1);
+    bool visitato[5][5] = {{ false }};
 
-    bool origine = false;
-    int i = 0;
-    int j = 0;
-    while ((i != x || j != y) && !origine) {
-        if (i != 0 && !visitato[i-1][j] && m[i-1][j] != 0) {
-            i--;
-            push_c(i, j);
-            visitato[i][j] = true;
-            origine = false;
+    bool bloccato = false;
+
+    int icur = 0;
+    int jcur = 0;
+    while ((icur != i || jcur != j) && !bloccato) {
+        visitato[icur][jcur] = true;
+        if (jcur < 4 && labirinto[icur][jcur+1] == 1 && !visitato[icur][jcur+1]) {
+            jcur++;
+            inserisci(icur, jcur);
         }
-        else if (i != 4 && !visitato[i+1][j] && m[i+1][j] != 0) {
-            i++;
-            push_c(i, j);
-            visitato[i][j] = true;
-            origine = false;
+        else if (icur > 0 && labirinto[icur-1][jcur] == 1 && !visitato[icur-1][jcur]) {
+            icur--;
+            inserisci(icur, jcur);
         }
-        else if (j != 0 && !visitato[i][j-1] && m[i][j-1] != 0) {
-            j--;
-            push_c(i, j);
-            visitato[i][j] = true;
-            origine = false;
+        else if (jcur > 0 && labirinto[icur][jcur-1] == 1 && !visitato[icur][jcur-1]) {
+            jcur--;
+            inserisci(icur, jcur);
         }
-        else if (j != 4 && !visitato[i][j+1] && m[i][j+1] != 0) {
-            j++;
-            push_c(i, j);
-            visitato[i][j] = true;
-            origine = false;
+        else if (icur < 4 && labirinto[icur+1][jcur] == 1 && !visitato[icur+1][jcur]) {
+            icur++;
+            inserisci(icur, jcur);
         }
         else {
-            if (i == 0 && j == 0) {
-                origine = true;
-            }
             pop();
             cella c;
-            top(c);
-            i = c.indiceRiga;
-            j = c.indiceColonna;
-
+            bloccato = !top(c);
+            icur = c.indiceRiga;
+            jcur = c.indiceColonna;
         }
     }
+    cella n;
 
-    cella c;
-    while (top(c)) {
-        cout << "labirinto[" << c.indiceRiga << "][" << c.indiceColonna << "] ";
-        pop();
+    if (!bloccato) {
+        while (top(n)) {
+            cout << "labirinto[" << n.indiceRiga << "][" << n.indiceColonna << "] ";
+            pop();
+        }
+        cout << "labirinto[0][0] ";
     }
 }
 
@@ -97,6 +82,6 @@ int main(int argc, char* argv[]) {
     // E' possibile modificare la cella di arrivo per effettuare dei test (la cella di partenza invece è sempre [0,0])   
     cout<<"Percorso: ";
     risolviLabirinto(labirinto, 4, 2);
-   
+
     return 0;
 }
