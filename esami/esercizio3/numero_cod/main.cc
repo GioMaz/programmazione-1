@@ -18,24 +18,35 @@ int main() {
 
 int decodificaNumero(char numeroCodificato []) {
     init();
-
+    
     int res = 0;
-    int len = strlen(numeroCodificato);
-    int esp = len;
 
-    for (int i = 0; i <= len; i++) {
-        push(i + 1);
-        if (i == len || numeroCodificato[i] == 'I') {
+    int i = 0;
+    while (numeroCodificato[i] != '\0') {
+        push(i+1);
+        if (numeroCodificato[i] == 'I') {
+            int n;
+            top(n);
             while (!vuota()) {
-                int n;
-                top(n);
-                res += n * pow(10, esp);
+                res += n;
+                res *= 10;
                 pop();
-                esp--;
+                top(n);
             }
         }
+        i++;
     }
 
-    deinit();
+    push(i+1);
+    int n;
+    while (!vuota()) {
+        top(n);
+        pop();
+        res += n;
+        res *= 10;
+    }
+
+    res /= 10;
+
     return res;
 }
