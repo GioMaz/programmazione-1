@@ -12,7 +12,7 @@ void from_decimal(int n, char res[]) {
     while (n1 != 0 && i >= 0) {
         int mod = n1 % 16; // BASE 16
         if (mod > 9) {
-            res1[i] = 'A' + mod - 10;
+            res1[i] = 'A' + mod - 10; // ALFABETO
         }
         else {
             res1[i] = '0' + mod;
@@ -35,8 +35,8 @@ int to_decimal(char n[]) {
     int cur = 1;
     int res1[max_len];
     while (n[i] != '\0') {
-        if (n[i] >= 'A' && n[i] <= 'F') { // BASE 16
-            cur = 10 + n[i] - 'A';
+        if (n[i] >= 'A' && n[i] <= 'F') { // BASE 16 // ALFABETO
+            cur = 10 + n[i] - 'A'; // ALFABETO
         }
         else if (n[i] >= '0' && n[i] <= '9'){
             cur = n[i] - '0';
