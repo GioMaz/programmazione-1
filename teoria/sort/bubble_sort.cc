@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include <iostream>
 
 using namespace std;
 
 // O(n^2)
-void bubble(int *a, int len) {
+void bubble_sort(int *a, int len) {
     int tmp;
     for (int i = 0; i < len - 1; i++) {
         for (int j = 0; j < len - i - 1; j++) {
@@ -24,7 +23,7 @@ int main() {
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;
 
-    bubble(a, len);
+    bubble_sort(a, len);
 
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;

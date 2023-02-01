@@ -4,7 +4,7 @@
 using namespace std;
 
 // O(n^2)
-void selection(int a[], int len) {
+void selection_sort(int *a, int len) {
     int temp;
     for (int i = 0; i < len - 1; i++) {
         int min = i;
@@ -25,7 +25,7 @@ int main() {
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;
 
-    selection(a, len);
+    selection_sort(a, len);
 
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;

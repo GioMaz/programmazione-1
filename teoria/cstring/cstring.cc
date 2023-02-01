@@ -18,7 +18,7 @@ int main() {
     char s2[6];
     strncpy(s2, s, 5);
     cout << s2 << endl; // Quest
-    
+
     char s3[8] = "Ciao";
     strcat(s3, "!!!");
     cout << s3 << endl; // Ciao!!!

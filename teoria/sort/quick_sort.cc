@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <iostream>
 
 using namespace std;
@@ -25,11 +24,11 @@ int partition(int *a, int low, int high) {
 }
 
 // O(nlogn)
-void quick(int *a, int low, int high) {
+void quick_sort(int *a, int low, int high) {
     if (low < high) {
         int pivot = partition(a, low, high);
-        quick(a, low, pivot - 1);
-        quick(a, pivot + 1, high);
+        quick_sort(a, low, pivot - 1);
+        quick_sort(a, pivot + 1, high);
     }
 }
 
@@ -40,7 +39,7 @@ int main() {
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;
 
-    quick(a, 0, len);
+    quick_sort(a, 0, len);
 
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;
