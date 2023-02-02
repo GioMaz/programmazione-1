@@ -33,8 +33,11 @@ void quick_sort(int *a, int low, int high) {
 }
 
 int main() {
-    int len = 10;
-    int a[] = { 4, 6, 2, 1, 20, 39, 17, 1, 4, 6 };
+    int len = 99999;
+    int a[len];
+    for (int i = 0; i < len; i++) {
+        a[i] = rand() % len + 1;
+    }
 
     for (int i = 0; i < len; i++) cout << a[i] << ' ';
     cout << endl;
