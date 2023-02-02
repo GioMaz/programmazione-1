@@ -63,13 +63,13 @@ void print(const tree &t) {
 }
 
 void insert_bilanciato_aux(int numeri[], int n1, int n2, tree &t) {
-    int n = (n1+n2)/2;
-    insert(t, numeri[n]);
-    if (n == n1 || n == n2) {
+    if (n1 == n2) {
         return;
     }
+    int n = (n1+n2)/2;
+    insert(t, numeri[n]);
     insert_bilanciato_aux(numeri, n1, n, t);
-    insert_bilanciato_aux(numeri, n, n2, t);
+    insert_bilanciato_aux(numeri, n+1, n2, t);
 }
 
 void insert_bilanciato(int numeri[], int n, tree &t) {
