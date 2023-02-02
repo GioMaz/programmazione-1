@@ -90,21 +90,21 @@ int main(int argc, char *argv[]) {
     }
 
     int n;
-    int i = 0;
+    int len = 0;
     int max_len = 100;
     int numeri[max_len];
-    while (in >> n && i < max_len) {
-        numeri[i] = n;
-        i++;
+    while (in >> n && len < max_len) {
+        numeri[len] = n;
+        len++;
     }
 
     in.close();
 
-    bubble(numeri, i);
+    bubble(numeri, len);
 
     tree t;
     init(t);
-    insert_bilanciato(numeri, i, t);
+    insert_bilanciato(numeri, len, t);
     print(t);
     deinit(t);
 
