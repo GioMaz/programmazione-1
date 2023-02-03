@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-    int a = 255;
+    int a = 255; // 11111111
     int n;
 
     n = a >> 2;

@@ -7,4 +7,4 @@
 - errore silenzioso `new (nothrow) nodo`
 - deallocazione array, struct `delete l1`
 - deallocazione abstract data types `deinit()`
-- considerare terminatore di stringa `'\0'`
+- considerare terminatore stringa `'\0'`

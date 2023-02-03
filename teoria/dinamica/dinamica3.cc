@@ -29,4 +29,6 @@ int main() {
         delete[] M[i];
     }
     delete[] M;
+
+    return 0;
 }
