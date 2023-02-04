@@ -8,3 +8,4 @@
 - deallocazione array, struct `delete l1`
 - deallocazione abstract data types `deinit()`
 - considerare terminatore stringa `'\0'`
+- gestire primo e ultimo elemento linked list
