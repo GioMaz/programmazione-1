@@ -8,5 +8,5 @@
 - deallocazione array, struct `delete l1`
 - deallocazione abstract data types `deinit()`
 - considerare terminatore stringa `'\0'`
-- valore default per array `char a[10] = { };`
+- array tterminatore stringa `char a[10] = { };`
 - gestire primo e ultimo elemento linked list
