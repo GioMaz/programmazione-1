@@ -17,7 +17,7 @@ void bubble_sort(int *a, int len) {
 }
 
 int main() {
-    int len = 99999;
+    int len = 10;
     int a[len];
     for (int i = 0; i < len; i++) {
         a[i] = rand() % len + 1;

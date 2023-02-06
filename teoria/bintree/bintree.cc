@@ -12,8 +12,8 @@ void init(tree &t) {
 void deinit(tree &t) {
     if (t != NULL) {
         deinit(t->left);
-        delete[] t;
         deinit(t->right);
+        delete t;
     }
 }
 

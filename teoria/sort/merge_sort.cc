@@ -51,7 +51,7 @@ void merge_sort(int *a, int n1, int n2) {
 }
 
 int main() {
-    int len = 99999;
+    int len = 10;
     int a[len];
     for (int i = 0; i < len; i++) {
         a[i] = rand() % len + 1;

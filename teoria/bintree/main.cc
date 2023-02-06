@@ -23,5 +23,7 @@ int main() {
     cout << t1->val << endl;
     // cout << t1.v[t1.i] << endl;
 
+    deinit(t);
+
     return 0;
 }
