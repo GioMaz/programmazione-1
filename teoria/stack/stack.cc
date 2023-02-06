@@ -15,7 +15,6 @@ static bool isempty() {
     return (S.i == 0);
 }
 
-
 void init(int dim) {
     S.i = 0;
     S.dim = dim;
@@ -51,7 +50,7 @@ bool pop() {
 
 bool top(int &n) {
     bool res = true;
-    if (isempty()) {
+    if (!isempty()) {
         n = S.v[S.i];
     }
     else {

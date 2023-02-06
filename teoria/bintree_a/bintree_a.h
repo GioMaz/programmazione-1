@@ -9,10 +9,10 @@ struct tree {
     int *v;
 };
 
-void init(tree &t, int d);
-void deinit(tree &t);
-void insert(tree &t, int n);
-tree search(const tree &t, int n);
-void print(const tree &t);
+void init(tree &, int);
+void deinit(tree &);
+void insert(tree &, int);
+tree search(const tree &, int);
+void print(const tree &);
 
 #endif
