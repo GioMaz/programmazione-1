@@ -22,5 +22,7 @@ int main() {
 
     print();
 
+    deinit();
+
     return 0;
 }

@@ -16,6 +16,9 @@ void init(int dim) {
 };
 
 void deinit() {
+    while (!isempty()) {
+        dequeue();
+    }
 }
 
 // ht-----------
