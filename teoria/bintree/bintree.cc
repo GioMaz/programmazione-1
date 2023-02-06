@@ -38,9 +38,16 @@ tree search(const tree &t, int n) {
     return res;
 }
 
-void print(const tree &t) {
+void print_aux(const tree &t, int i) {
     if (t == NULL) return;
-    print(t->left);
+    print_aux(t->left, i+1);
+    for (int j = 0; j < i; j++) {
+        cout << "  ";
+    }
     cout << t->val << endl;
-    print(t->right);
+    print_aux(t->right, i+1);
+}
+
+void print(const tree &t) {
+    print_aux(t, 0);
 }

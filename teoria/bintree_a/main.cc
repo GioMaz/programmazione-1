@@ -10,8 +10,8 @@ int main() {
     init(t, 200);
 
     insert(t, 6);
-    insert(t, 1);
     insert(t, 3);
+    insert(t, 1);
     insert(t, 5);
     insert(t, 7);
     insert(t, 9);

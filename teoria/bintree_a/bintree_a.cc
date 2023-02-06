@@ -68,10 +68,17 @@ tree search(const tree &t, int n) {
     return res;
 }
 
-void print(const tree &t) {
+void print_aux(const tree &t, int i) {
     if (t.v[t.i] != -1) {
-        print(left(t));
+        print_aux(left(t), i+1);
+        for (int j = 0; j < i; j++) {
+            cout << "  ";
+        }
         cout << t.v[t.i] << endl;
-        print(right(t));
+        print_aux(right(t), i+1);
     }
+}
+
+void print(const tree &t) {
+    print_aux(t, 0);
 }
