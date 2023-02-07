@@ -2,6 +2,8 @@
 #include <cstring>
 #include "persona.h"
 
+using namespace std;
+
 persona *create(char *nome, char *cognome, char *indirizzo, int numero) {
     persona *p = new persona;
     strcpy(p->nome, nome);

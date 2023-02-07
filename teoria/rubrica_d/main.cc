@@ -1,11 +1,11 @@
 #include <iostream>
-#include "tree.h"
+#include "tree_d.h"
 #include "persona.h"
 
 using namespace std;
 
 int main() {
-    tree t;
+    tree_d t;
     init(t);
 
     persona *p1 = create("Giulio", "Cesare", "Roma", 49);
@@ -16,11 +16,12 @@ int main() {
     insert(t, p2);
     insert(t, p3);
 
-    print_tree(t);
+    print_cognome(t);
+    print_nome(t);
 
-    tree t1 = search(t, "Aurelio");
+    tree t1 = search_cognome(t, "Aurelio");
     if (t1 != NULL) {
-        print(t1 ->p);
+        print(t1->p);
     }
 
     deinit(t);
