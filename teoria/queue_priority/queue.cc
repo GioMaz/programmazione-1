@@ -4,11 +4,11 @@ static int next(int i) {
     return (i + 1) % QUEUE_SIZE;
 }
 
-static bool isfull(const queue &q) {
+bool isfull(const queue &q) {
     return (next(q.t) == q.h);
 }
 
-static bool isempty(const queue &q) {
+bool isempty(const queue &q) {
     return (q.t == q.h);
 }
 

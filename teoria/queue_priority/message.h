@@ -3,7 +3,7 @@
 
 const int MAX_DIM = 200;
 const int QUEUE_SIZE = 100;
-const int MAX_PRIORITY = 10;
+const int MAX_PRIORITY = 9;
 
 struct message {
     int priority;

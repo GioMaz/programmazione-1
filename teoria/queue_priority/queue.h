@@ -9,6 +9,8 @@ struct queue {
     message v[QUEUE_SIZE];
 };
 
+bool isfull(const queue &);
+bool isempty(const queue &);
 void init(queue &);
 void deinit(queue &);
 bool enqueue(queue &, message &);

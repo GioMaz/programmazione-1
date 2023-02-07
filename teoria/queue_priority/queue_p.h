@@ -4,13 +4,13 @@
 #include "queue.h"
 
 struct queue_p {
-    queue v_p[MAX_PRIORITY];
+    queue v_p[MAX_PRIORITY+1];
 };
 
 void init_p(queue_p &);
 void deinit_p(queue_p &);
 bool enqueue_p(queue_p &, message &);
-bool dequeue_p(queue_p &, message &);
+bool dequeue_p(queue_p &);
 void print_p(const queue_p &);
 
 #endif

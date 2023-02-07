@@ -19,7 +19,7 @@ int main() {
     char input[MAX_DIM];
 
     while (!esci) {
-        
+
         cin >> input;
 
         if (strcmp(input, "rimuovi") == 0) {

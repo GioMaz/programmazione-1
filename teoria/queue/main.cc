@@ -14,7 +14,7 @@ int main() {
     enqueue(6);
     enqueue(7);
     enqueue(5);
-    
+
     print();
 
     dequeue();
