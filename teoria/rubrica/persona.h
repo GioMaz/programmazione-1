@@ -14,6 +14,6 @@ struct persona {
 
 persona *create(char *, char *, char *, int);
 persona *read();
-void print(const persona &);
+void print(const persona *);
 
 #endif

@@ -9,14 +9,12 @@ struct nodo {
     nodo *right;
 };
 
-typedef nodo *tree_nome;
-typedef nodo *tree_cognome;
+typedef nodo *tree;
 
-void init(tree_nome &a);
-void deinit(tree_nome &a);
-void insert_nome(albero &a, int n);
-void insert_cognome(albero &a, int n);
-albero search(const albero &a, int n);
-void print(const albero &a);
+void init(tree &t);
+void deinit(tree &t);
+void insert(tree &t, persona *p);
+tree search(const tree &t, persona *p);
+void print_tree(const tree &t);
 
 #endif

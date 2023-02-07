@@ -2,7 +2,7 @@
 #include <cstring>
 #include "persona.h"
 
-persona *crea(char *nome, char *cognome, char *indirizzo, int numero) {
+persona *create(char *nome, char *cognome, char *indirizzo, int numero) {
     persona *p = new persona;
     strcpy(p->nome, nome);
     strcpy(p->cognome, cognome);
@@ -13,13 +13,29 @@ persona *crea(char *nome, char *cognome, char *indirizzo, int numero) {
 
 persona *read() {
     persona *p;
-    cin >> p->nome;
-    cin >> p->cognome;
-    cin >> p->indirizzo;
-    cin >> p->numero;
+
+    char nome[MAX_DIM];
+    char cognome[MAX_DIM];
+    char indirizzo[MAX_DIM];
+    int numero;
+
+    cout << "Nome: ";
+    cin >> nome;
+    cout << "Cognome: ";
+    cin >> cognome;
+    cout << "Indirizzo: ";
+    cin >> indirizzo;
+    cout << "Numero: ";
+    cin >> numero;
+
+    create(nome, cognome, indirizzo, numero);
+
     return p;
 }
 
-void print(const persona &p) {
-    cout << p.nome << ' ' << p.cognome << ' ' << p.indirizzo << ' ' << p.numero << endl;
+void print(const persona *p) {
+    cout << p->cognome << ' ';
+    cout << p->nome << ' ';
+    cout << p->indirizzo << ' ';
+    cout << p->numero << endl;
 }

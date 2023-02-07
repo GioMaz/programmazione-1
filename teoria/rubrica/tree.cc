@@ -1,54 +1,51 @@
 #include <iostream>
+// #include <cstring>
 #include "tree.h"
+#include "persona.h"
 
 using namespace std;
 
-void init(albero &a) {
-    a = NULL;
+void init(tree &t) {
+    t = NULL;
 };
 
-void deinit(albero &a) {
-    if (a != NULL) {
-        deinit(a->left);
-        deinit(a->right);
-        delete[] a;
+void deinit(tree &t) {
+    if (t != NULL) {
+        deinit(t->left);
+        deinit(t->right);
+        delete[] t->p;
+        delete t;
     }
 }
 
-void insert_nome(albero &a, persona *p) {
-    if (a == NULL) {
-        a = new (nothrow) nodo;
-        a->p = p;
-        a->left = NULL;
-        a->right = NULL;
+void insert(tree &t, persona *p) {
+    if (t == NULL) {
+        t = new (nothrow) nodo;
+        t->p = p;
+        t->left = NULL;
+        t->right = NULL;
     }
-    else if (strcmp(p->nome, a->p->nome) <= 0) insert_nome(a->left, p);
-    else insert_nome(a->right, p);
+    else if (strcmp(p->cognome, t->p->cognome) < 0) insert(t->left, p);
+    else insert(t->right, p);
 }
 
-void insert_cognome(albero &a, persona *p) {
-    if (a == NULL) {
-        a = new (nothrow) nodo;
-        a->p = p;
-        a->left = NULL;
-        a->right = NULL;
+tree search(const tree &t, persona *p) {
+    tree res;
+    if (t == NULL) {
+        res = t;
     }
-    else if (strcmp(p->cognome, a->p->cognome) <= 0) insert_cognome(a->left, p);
-    else insert_cognome(a->right, p);
-}
-
-albero search(const albero &a, int n) {
-    albero res;
-    if (a == NULL) res = NULL;
-    else if (n == a->val) res = a;
-    else if (n < a->val) res = search(a->left, n);
-    else if (n > a->val) res = search(a->right, n);
+    else {
+        int cognome = strcmp(t->p->cognome, p->cognome);
+        if (cognome == 0) res = t;
+        else if (cognome < 0) res = search(t->left, p);
+        else res = search(t->right, p);
+    }
     return res;
 }
 
-void print_tree(const albero &a) {
-    if (a == NULL) return;
-    print(a->left);
-    print()
-    print(a->right);
+void print_tree(const tree &t) {
+    if (t == NULL) return;
+    print_tree(t->left);
+    print(t->p);
+    print_tree(t->right);
 }
