@@ -29,17 +29,14 @@ void insert(tree &t, persona *p) {
     else insert(t->right, p);
 }
 
-tree search(const tree &t, persona *p) {
+tree search(const tree &t, char *c) {
     tree res;
     if (t == NULL) {
         res = t;
     }
-    else {
-        int cognome = strcmp(t->p->cognome, p->cognome);
-        if (cognome == 0) res = t;
-        else if (cognome < 0) res = search(t->left, p);
-        else res = search(t->right, p);
-    }
+    else if (strcmp(c, t->p->cognome) == 0) res = t;
+    else if (strcmp(c, t->p->cognome) < 0) res = search(t->left, c);
+    else res = search(t->right, c);
     return res;
 }
 

@@ -18,6 +18,11 @@ int main() {
 
     print_tree(t);
 
+    tree p4 = search(t, "Aurelio");
+    if (p4 != NULL) {
+        print(p4->p);
+    }
+
     deinit(t);
 
     return 0;

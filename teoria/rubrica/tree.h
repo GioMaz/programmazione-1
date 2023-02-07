@@ -11,10 +11,10 @@ struct nodo {
 
 typedef nodo *tree;
 
-void init(tree &t);
-void deinit(tree &t);
-void insert(tree &t, persona *p);
-tree search(const tree &t, persona *p);
-void print_tree(const tree &t);
+void init(tree &);
+void deinit(tree &);
+void insert(tree &, persona *);
+tree search(const tree &, char *);
+void print_tree(const tree &);
 
 #endif
