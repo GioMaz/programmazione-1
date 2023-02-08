@@ -97,7 +97,6 @@ bool popP2() {
         I2++;
     }
     return res;
-
 }
 
 void deinit() {
