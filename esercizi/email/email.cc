@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
         exit(1);
     }
 
-    char buffer[255];
+    char buffer[256];
     while (in >> buffer) {
         if (isvalid(buffer)) {
             cout << buffer << endl;
