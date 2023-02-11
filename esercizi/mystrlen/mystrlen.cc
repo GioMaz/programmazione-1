@@ -10,13 +10,6 @@ int mystrlen(char string[]) {
     return i;
 }
 
-// int mystrlen(char *s) {
-//     if (*s == '\0')
-//         return 0;
-// 
-//     return 1+mystrlen(s+1);
-// }
-
 int main() {
     char buffer[255] = "questa è una stringa";
     cout << mystrlen(buffer) << endl;
