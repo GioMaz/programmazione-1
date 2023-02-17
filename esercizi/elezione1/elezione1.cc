@@ -56,5 +56,7 @@ char calcolaVincitore(char partecipanti[]) {
 
     first(cur);
 
+    deinit();
+
     return cur;
 }

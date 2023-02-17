@@ -43,5 +43,7 @@ int calcolaVincitore(int partecipanti[], int numeroPartecipanti, int salto) {
     print();
     first(n);
 
+    deinit();
+
     return n;
 }
