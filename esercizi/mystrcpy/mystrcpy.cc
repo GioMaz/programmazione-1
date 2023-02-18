@@ -8,7 +8,7 @@ void mystrcpy (char s1[], char s2[]) {
         s1[i] = s2[i];
         i++;
     }
-    s1[i+1] = '\0';
+    s1[i] = '\0';
 }
 
 int main() {
