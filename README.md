@@ -10,3 +10,4 @@
 - considerare terminatore stringa `'\0'`
 - array terminatore stringa `char a[10] = { };`
 - gestire primo e ultimo elemento linked list
+- NON inizializzare liste nel caso base di albero
